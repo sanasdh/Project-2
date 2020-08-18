@@ -1,0 +1,15 @@
+<%- include("../partials/header") %>
+
+<% userData.forEach(function(b){ %>
+    <% if(newBrand==b.brand && newProduct==b.product_type){ %>
+
+      <div class="sortingImg">
+        <img src="<%= b.api_featured_image %>" >
+        <form action="/products/<%=b.id %>" method="GET">
+        <button type="submit">Detail</button>
+            </form>
+        </div>
+
+<% }}) %>
+
+<%- include("../partials/footer") %>
