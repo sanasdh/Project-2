@@ -11,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Pangolin&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel='stylesheet' href='/stylesheets/style1.css' />
     <!-- JavaScript for Materialize -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer src="/javascripts/mainIndex.js"></script>
 
 </head>
 
@@ -19,7 +21,7 @@
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
-                <a href="" class="brand-logo left">Clothing</a>
+                <a href="" class="brand-logo left">Cosmetics</a>
                 <ul class="right">
                     <li>
                         <a href="clothes/search"><i class="material-icons left">search</i> Search</a>
@@ -39,9 +41,26 @@
     </div>
 
     <main>
-        <div>
-            <p class="outfit">Find your next outfit here </p>
 
+        <div class="slideshow-container">
+        
+        <div class="mySlides fade">
+            <img src="/images/img9.jpg" style="width:100%">
         </div>
+        
+        <div class="mySlides fade">
+            <img src="/images/img10.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+            <img src="/images/img11.jpg" style="width:100%; opacity: .8;" >
+        </div>
+        
+        </div>
+        <br>
 
+    <p class="outfit">Find your next outfit here </p>
+
+</main>
+  
         <%- include('../partials/footer') %>

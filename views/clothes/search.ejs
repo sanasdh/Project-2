@@ -1,86 +1,117 @@
 <%- include('../partials/header') %>
 
 <form action="/products" method="GET">
-    <label> Brand</label>
-    <select name="brand">
-        <option value="colourpop">colourpop</option>
-        <option value="deciem">Deciem</option>
-        <option value="boosh">Boosh</option>
-        <option value="zorah">zorah biocosmetiques</option>
-        <option value="w3llpeople">w3llpeople</option>
-        <option value="rejuva">rejuva minerals</option>
-        <option value="penny">penny lane organics</option>
-        <option value="nudus">nudus</option>
-        <option value="marienatie">marienatie</option>
-        <option value="lotus">lotus cosmetics usa</option>
-        <option value="green">green people</option>
-        <option value="c'est moi">c'est moi</option>
-        <option value="alva">alva</option>
-        <option value="glossier">glossier</option>
-        <option value="nyx">NYX</option>
-        <option value="clinique">clinique</option>
-        <option value="dior">dior</option>
-        <option value="iman">Iman</option>
-        <option value="benefit">benefit</option>
-        <option value="smashbox">smashbox</option>
-
-
-    </select>
+    <div class="input-field col s12">
+        <select name="brand" multiple>
+            <option value="colourpop">colourpop</option>
+            <option value="deciem">Deciem</option>
+            <option value="boosh">Boosh</option>
+            <option value="zorah">zorah biocosmetiques</option>
+            <option value="w3llpeople">w3llpeople</option>
+            <option value="rejuva">rejuva minerals</option>
+            <option value="penny">penny lane organics</option>
+            <option value="nudus">nudus</option>
+            <option value="marienatie">marienatie</option>
+            <option value="lotus">lotus cosmetics usa</option>
+            <option value="green">green people</option>
+            <option value="c'est moi">c'est moi</option>
+            <option value="alva">alva</option>
+            <option value="glossier">glossier</option>
+            <option value="nyx">NYX</option>
+            <option value="clinique">clinique</option>
+            <option value="dior">dior</option>
+            <option value="iman">Iman</option>
+            <option value="benefit">benefit</option>
+            <option value="smashbox">smashbox</option>
+        </select>
+        <label> Brand</label>
+    </div>
+    </br>
+    <div class="input-field col s12">
+        <select name="product" id="product" onchange="yesnoCheck(this);" multiple>
+            <option value="lipstick">lipstick</option>
+            <option value="lip_liner">lip liner</option>
+            <option value="mascara">mascara</option>
+            <option value="nail_polish">Nail polish</option>
+            <option value="eyebrow">Brow Styler</option>
+            <option value="eyeliner">Eyeliner</option>
+            <option value="eyeshadow">eyeshadow</option>
+            <option value="blush">blush</option>
+            <option value="foundation">foundation</option>
+            <option value="bronzer">bronzer</option>
+        </select>
+        <label> Product</label>
+    </div>
+    </br>
+    <div class="form-group">
+        <label for="formControlRange">Price</label>
+        <input type="range" class="form-control-range" min="0" max="100" id="test-slider" name="price">
+      </div>
 </br>
-    <label> Product</label>
-    <select name="product" id="product">
-        <option value="lip_liner">lip liner</option>
-        <option value="lipstick">lipstick</option>
-        <option value="mascara">mascara</option>
-        <option value="nail_polish">Nail polish</option>
-        <option value="eyebrow">Brow Styler</option>
-        <option value="eyeliner">Eyeliner</option>
-        <option value="eyeshadow">eyeshadow</option>
-        <option value="blush">blush</option>
-        <option value="foundation">foundation</option>
-        <option value="bronzer">bronzer</option>
-    </select>
+    <label class="colorClass">Color</label>
+    <input type="color" name="color" list="presetColors" class="colorClass" style="display: none;" id="ifYes">
+    <datalist id="presetColors" class="colorClass">
+        <option>#AB7164</option>
+        <option>#DFAC9B</option>
+        <option>#542328"</option>
+        <option>#B0516F</option>
+        <option>#B5716A</option>
+        <option>#242225</option>
+        <option>#5C3357</option>
+        <option>#653E44</option>
+        <option>#93283C</option>
+        <option>#702E2D</option>
+        <option>#8C4A47</option>
+        <option>#762F50</option>
+        <option>#714B41</option>
+        <option>#361927</option>
+        <option>#4D2D28</option>
+        <option>#6D414B</option>
+        <option>#914B4C</option>
+        <option>#AF4051</option>
+        <option>#C23D3C"</option>
+        <option>#A33C37</option>
+        <option>#DA6952</option>
+        <option>#CE435D</option>
+        <option>#BF2C7E</option>
+        <option>#965564</option>
+        <option>#743A6A</option>
+        <option>#C095BC</option>
+        <option>#5F2820</option>
+    </datalist>
 </br>
-<label class="colorClass">Color</label>
-<input type="color" name="color" list="presetColors" class="colorClass">
-<datalist id="presetColors" class="colorClass">
-  <option>#AB7164</option>
-  <option>#DFAC9B</option>
-  <option>#542328"</option>
-  <option>#B0516F</option>
-  <option>#B5716A</option>
-  <option>#242225</option>
-  <option>#5C3357</option>
-  <option>#653E44</option>
-  <option>#93283C</option>
-  <option>#702E2D</option>
-  <option>#8C4A47</option>
-  <option>#762F50</option>
-  <option>#714B41</option>
-  <option>#361927</option>
-  <option>#4D2D28</option>
-  <option>#6D414B</option>
-  <option>#914B4C</option>
-  <option>#AF4051</option>
-  <option>#C23D3C"</option>
-  <option>#A33C37</option>
-  <option>#DA6952</option>
-  <option>#CE435D</option>
-  <option>#BF2C7E</option>
-  <option>#965564</option>
-  <option>#743A6A</option>
-  <option>#C095BC</option>
-  <option>#5F2820</option>
-</datalist>
-<button type="submit"> Submit </button>
-    </form>
-    <script>
-        $(document).ready(function() {
-            
-});
-if( document.getElementById(product).value=="lipstick"){
-    document.query
-}
-    </script>
+    <button type="submit"> Submit </button>
+</form>
 
 <%- include('../partials/footer') %>
+<script>
+    $(document).ready(function () {
+
+    });
+    if (document.getElementById(product).value == "lipstick") {
+        document.query
+    }
+    function yesnoCheck(that) {
+        if (that.value == "lip_liner") {
+            document.getElementById("ifYes").style.display = "block";
+        } else {
+            document.getElementById("ifYes").style.display = "none";
+        }
+    }
+</script>
+<script>
+      var slider = document.getElementById('test-slider');
+  noUiSlider.create(slider, {
+   start: [20, 80],
+   connect: true,
+   step: 1,
+   orientation: 'horizontal', // 'horizontal' or 'vertical'
+   range: {
+     'min': 0,
+     'max': 100
+   },
+   format: wNumb({
+     decimals: 0
+   })
+  });
+</script>

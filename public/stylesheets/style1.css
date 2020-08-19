@@ -36,11 +36,12 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #406078;
+  background-color: #b2c5d4;
   padding: 20px;
   overflow-y: scroll;
-  background-image: url("/images/img6.jpg");
-  background-position: left bottom;
+  /* background-image: url("/images/img12.png");
+  background-size: cover;
+  background-position: left bottom; */
 }
 
 body > main h1:first-child {
@@ -97,9 +98,9 @@ table td {
 i{
   display: inline;
 }
- .nav-wrapper{
-background-color: #d8c068;
-}
+.nav-wrapper{
+  background-color: #5a5850;
+  }
 .brand-logo{
   margin-left: 10px;
   font-size: 20px;
@@ -160,4 +161,36 @@ background-color: #d8c068;
  img {
    object-fit: scale-down;
 }
- 
+ /* Slideshow container */
+ .slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}

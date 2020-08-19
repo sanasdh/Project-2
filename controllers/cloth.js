@@ -1,5 +1,6 @@
 let Cloth = require("../models/cloth")
 
+
 function index(req, res, next) {
     console.log(req.query)
     // Make the query object to use with Student.find based up

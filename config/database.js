@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/cloth',
+mongoose.connect('mongodb://localhost/cloth2',
   { useNewUrlParser: true, 
     useCreateIndex: true,
-    useCreateIndex: true }
+    useCreateIndex: true,
+    useUnifiedTopology: true }
 );
 
 // shortcut to mongoose.connection objec

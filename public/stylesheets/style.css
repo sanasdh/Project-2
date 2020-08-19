@@ -1,14 +1,9 @@
-* {
-    box-sizing: border-box;
-    font-family: Helvetica;
-    color: #424748;
-  }
-  
   body {
     margin: 0;
     height: 100vh;
     display: grid;
-    grid-template-rows: 50px 1fr;
+    background-color: beige;
+    grid-template-rows: 50px 1fr 1fr;
     grid-template-areas:
       "nav"
       "main"
@@ -132,7 +127,7 @@
     display: inline;
   }
    .nav-wrapper{
-  background-color: #d8c068;
+  background-color: #5a5850;
   }
   .brand-logo{
     margin-left: 10px;
@@ -152,9 +147,12 @@
   .searchIcon{
     color: black;
   }
-  select{
-    display: inline;
-  }
   option:hover{
     background-color: none;
   }
+
+  * {box-sizing: border-box;}
+  .mySlides {display: none;}
+  img {vertical-align: middle;}
+  
+  
