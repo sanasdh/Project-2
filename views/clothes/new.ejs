@@ -1,17 +1,23 @@
 <%- include("../partials/header") %>
-
 <% productData.forEach(function(b){ %>
   <% newBrand.forEach(function(nB){ %>
     <% if(nB==b.brand){ %>
+      <% a++ %>
       <% newProduct.forEach(function(nP){ %>
-        <% if(nP==b.product_type){ %>
-
-      <div class="sortingImg">
-        <img src="<%= b.api_featured_image %>" >
-        <form action="/products/<%=b._id %>" method="GET">
-        <button type="submit">Detail</button>
-            </form>
+      <% if(nP==b.product_type){ %>
+        <% c++ %>
+        <div class="sortingImg">
+          <img src="<%= b.api_featured_image %>">
+          <form action="/products/<%=b._id %>" method="GET">
+            <button type="submit">Detail</button>
+          </form>
         </div>
-        <% }})}})}) %>
+<% }})}})}) %>
+<% console.log("c here",c) %>
+<% console.log("a here",a) %>
+
+<% if(c==0){ %>
+  <h3>Sorry, <a href="/clothes/search" class="here">search</a> again :( </h3>
+<% } %>
 
 <%- include("../partials/footer") %>

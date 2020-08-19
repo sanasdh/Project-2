@@ -24,7 +24,8 @@
             <option value="benefit">benefit</option>
             <option value="smashbox">smashbox</option>
         </select>
-        <label> Brand</label>
+        <label class="label"> Brand</label>
+
     </div>
     </br>
     <div class="input-field col s12">
@@ -41,13 +42,9 @@
             <option value="bronzer">bronzer</option>
         </select>
         <label> Product</label>
+
     </div>
     </br>
-    <div class="form-group">
-        <label for="formControlRange">Price</label>
-        <input type="range" class="form-control-range" min="0" max="100" id="test-slider" name="price">
-      </div>
-</br>
     <label class="colorClass">Color</label>
     <input type="color" name="color" list="presetColors" class="colorClass" style="display: none;" id="ifYes">
     <datalist id="presetColors" class="colorClass">
@@ -79,11 +76,10 @@
         <option>#C095BC</option>
         <option>#5F2820</option>
     </datalist>
-</br>
+    </br>
     <button type="submit"> Submit </button>
 </form>
-
-<%- include('../partials/footer') %>
+</main>
 <script>
     $(document).ready(function () {
 
@@ -100,18 +96,19 @@
     }
 </script>
 <script>
-      var slider = document.getElementById('test-slider');
-  noUiSlider.create(slider, {
-   start: [20, 80],
-   connect: true,
-   step: 1,
-   orientation: 'horizontal', // 'horizontal' or 'vertical'
-   range: {
-     'min': 0,
-     'max': 100
-   },
-   format: wNumb({
-     decimals: 0
-   })
-  });
+    var slider = document.getElementById('test-slider');
+    noUiSlider.create(slider, {
+        start: [20, 80],
+        connect: true,
+        step: 1,
+        orientation: 'horizontal', // 'horizontal' or 'vertical'
+        range: {
+            'min': 0,
+            'max': 100
+        },
+        format: wNumb({
+            decimals: 0
+        })
+    });
 </script>
+<%- include('../partials/footer') %>

@@ -8,7 +8,8 @@
     <!-- Google Icon Fonts used by Materialize -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Materialize CSS Framework -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Pangolin&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Pangolin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel='stylesheet' href='/stylesheets/style1.css' />
     <!-- JavaScript for Materialize -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -29,6 +30,9 @@
                     <li>
                         <% if (user) { %>
                         <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+                        <li>
+                            <a href="/users"><i class="material-icons left">perm_identity</i>Profile</a>
+                        </li>
                         <% } else { %>
                         <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
                         <% } %>
@@ -43,24 +47,20 @@
     <main>
 
         <div class="slideshow-container">
-        
-        <div class="mySlides fade">
-            <img src="/images/img9.jpg" style="width:100%">
-        </div>
-        
-        <div class="mySlides fade">
-            <img src="/images/img10.jpg" style="width:100%">
-        </div>
-        
-        <div class="mySlides fade">
-            <img src="/images/img11.jpg" style="width:100%; opacity: .8;" >
-        </div>
-        
-        </div>
-        <br>
 
-    <p class="outfit">Find your next outfit here </p>
+            <div class="mySlides fade">
+                <img src="/images/img9.jpg" style="width:100%">
+            </div>
 
-</main>
-  
-        <%- include('../partials/footer') %>
+            <div class="mySlides fade">
+                <img src="/images/img11.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="/images/img10.jpg" style="width:100%; opacity: .8;">
+            </div>
+        </div>
+        <p class="outfit">Find your next outfit <a href="clothes/search" class="here">here </a></p>
+    </main>
+
+    <%- include('../partials/footer') %>
