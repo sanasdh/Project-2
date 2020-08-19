@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/cloth2',
-  { useNewUrlParser: true, 
-    useCreateIndex: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true }
-);
+mongoose.connect(process.env.DATABASE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 // shortcut to mongoose.connection objec
 const db = mongoose.connection;
