@@ -154,13 +154,13 @@ i{
    display: none;
   margin: 0 auto;}
  img {
-   object-fit: scale-down;
+   object-fit: fill;
 }
  /* Slideshow container */
  .slideshow-container {
   max-width: 1500px;
-  position: relative;
-  margin: 0 auto;
+  /* position: relative; */
+  margin: 0;
 }
 
 .active {
