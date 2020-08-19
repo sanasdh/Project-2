@@ -23,8 +23,8 @@ let a=0,c=0;
             user: req.user,
             name: req.query.name,
             sortKey,
-            newBrand: [brand],
-            newProduct: [product],
+            newBrand: brand,
+            newProduct: product,
             a,
             c
         });

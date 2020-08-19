@@ -2,17 +2,20 @@
 name: <%= product[0].name %>
 </br>
 <img class="showProduct" src="<%= product[0].api_featured_image %>" >
-View on<a class="showProduct" href="<%= product[0].product_link %>"  target=”_blank” ><span class="showProduct"><%= product[0].brand %></span></a>Website</br>
-Price: <%= product[0].price %>   
+<div>View on <a class="showProduct" href="<%= product[0].product_link %>"  target=”_blank” ><span class="showProduct"><%= product[0].brand %></span></a> Website </div>
+</br>Price: <%= product[0].price %>   
 <% if (product[0].currency){ %>
-Currency: <%= product[0].currency %>
-<% } %>
-Description: <%= product[0].description %>
+<%= product[0].currency %>
+<% } else{%>
+  CAD <% } %>
+</br>Description: <%= product[0].description %>
 <form action="" method="POST">
     <button type="submit">Add to WishList</button>
 </form>
 
-<br><br><h2>Reviews</h2>
+
+<% if (user) { %>
+  <br><br><h2>Reviews</h2>
 <form id="add-review-form" method="POST"
   action="/products/<%= product._id %>/reviews">
   <label>Review:</label>
@@ -27,6 +30,11 @@ Description: <%= product[0].description %>
   </select>
   <input type="submit" value="Add Review">
 </form>
+  <% } else { %>
+<h3>Please <a href="/auth/google">login</a> to submit a review</h3>
+    <% } %>
+
+
 
 <% if (product[0].reviews.length) { %>
   <table>

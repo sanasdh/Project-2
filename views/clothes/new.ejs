@@ -1,9 +1,9 @@
 <%- include("../partials/header") %>
 <% productData.forEach(function(b){ %>
-  <% newBrand[0].forEach(function(nB){ %>
+  <% newBrand.forEach(function(nB){ %>
     <% if(b.brand==nB){ %>
       <% a++ %>
-      <% newProduct[0].forEach(function(nP){ %>
+      <% newProduct.forEach(function(nP){ %>
       <% if(b.product_type== nP){ %>
         <% c++ %>
         <div class="sortingImg">
