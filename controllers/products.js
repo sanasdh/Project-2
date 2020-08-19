@@ -9,7 +9,7 @@ async function create(req, res, next) {
     let sortKey = req.query.sort || 'name';
 
     const brand = req.query.brand;
-    const product = req.query.product
+    const product = req.query.product;
     const productData = await Product.find({});
 let a=0,c=0;
     // const userData = JSON.parse(body);
@@ -23,8 +23,8 @@ let a=0,c=0;
             user: req.user,
             name: req.query.name,
             sortKey,
-            newBrand: brand,
-            newProduct: product,
+            newBrand: [brand],
+            newProduct: [product],
             a,
             c
         });
