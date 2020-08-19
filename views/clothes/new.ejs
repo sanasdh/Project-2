@@ -1,10 +1,10 @@
 <%- include("../partials/header") %>
 <% productData.forEach(function(b){ %>
-  <% newBrand.forEach(function(nB){ %>
-    <% if(nB==b.brand){ %>
+  <% newBrand[0].forEach(function(nB){ %>
+    <% if(b.brand==nB){ %>
       <% a++ %>
-      <% newProduct.forEach(function(nP){ %>
-      <% if(nP==b.product_type){ %>
+      <% newProduct[0].forEach(function(nP){ %>
+      <% if(b.product_type== nP){ %>
         <% c++ %>
         <div class="sortingImg">
           <img src="<%= b.api_featured_image %>">
@@ -13,8 +13,6 @@
           </form>
         </div>
 <% }})}})}) %>
-<% console.log("c here",c) %>
-<% console.log("a here",a) %>
 
 <% if(c==0){ %>
   <h3>Sorry, <a href="/clothes/search" class="here">search</a> again :( </h3>
