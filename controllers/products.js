@@ -4,46 +4,38 @@ let Product = require("../models/product");
 const rootURL = "http://makeup-api.herokuapp.com/api/v1/products.json";
 
 async function create(req, res, next) {
-  let modelQuery = req.query.name
-    ? { name: new RegExp(req.query.name, "i") }
-    : {};
-  // Default to sorting by name
-  let sortKey = req.query.sort || "name";
-
   let brand = req.query.brand;
+  let product = req.query.product;
+
+  console.log("product", product);
+  console.log("brand", brand);
+
   console.log(Array.isArray(brand));
   if (Array.isArray(brand)) {
-    return brand;
+    console.log("in if brand");
   } else {
     brand = [brand];
   }
   console.log("after brand", brand);
-  let product = req.query.product;
+  console.log(Array.isArray(product));
   if (Array.isArray(product)) {
-    return product;
+    console.log(Array.isArray(product));
   } else {
     product = [product];
   }
+  console.log("after product", product);
+
   const productData = await Product.find({});
   let a = 0,
     c = 0;
-  Cloth.find(modelQuery)
-    .sort(sortKey)
-    .exec(function (err) {
-      if (err) return next(err);
-      console.log("product", product);
-      console.log("brand", brand);
-      res.render("clothes/new", {
-        productData,
-        user: req.user,
-        name: req.query.name,
-        sortKey,
-        newBrand: brand,
-        newProduct: product,
-        a,
-        c,
-      });
-    });
+  res.render("clothes/new", {
+    productData,
+    user: req.user,
+    newBrand: brand,
+    newProduct: product,
+    a,
+    c,
+  });
 }
 function show(req, res) {
   Product.find({ _id: req.params.id }, function (err, product) {
