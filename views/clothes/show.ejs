@@ -12,7 +12,7 @@ name: <%= p.name %>
 </br>Description: <%= p.description %>
 <% if (user) { %>
   <% if(cloth.products.includes(p._id)){ %>
-  <form action="/users/<%= p._id %>" method="POST">
+  <form action="/users" method="GET">
     <button type="submit">WishListed!</button>
     </form>
   <% } else { %>
@@ -22,8 +22,7 @@ name: <%= p.name %>
 <% } %>
 
   <br><br><h2>Reviews</h2>
-<form id="add-review-form" method="POST"
-  action="/products/<%= p._id %>/reviews">
+<form id="add-review-form" method="POST" action="/products/<%= p._id %>/reviews">
   <label>Review:</label>
   <textarea name="content"></textarea>
   <label>Rating:</label>

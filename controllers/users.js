@@ -2,7 +2,6 @@ let Cloth = require("../models/cloth")
 let Product = require("../models/product");
 
 function index(req, res, next) {
-  console.log("***************************");
   Cloth.findById(req.user.id).populate("products").exec(function (err, userInfo) {
     res.render('profile/index', {
       user: req.user,
@@ -12,8 +11,14 @@ function index(req, res, next) {
 }
 
 function create(req, res) {
-
-  Cloth.findById(req.user.id, function (err, cloth) {
+  console.log("in cloth");
+  console.log("req.user.id", req.user.id);
+  console.log("req.user", req.user);
+  Cloth.findById({"_id":req.user.id}, function (err, cloth) {
+    console.log("in cloth 2");
+    console.log("req.user.id", req.user.id);
+    console.log("req.user", req.user);
+    console.log("cloth", cloth);
     if (!(cloth.products.includes(req.params.id))) {
       cloth.products.unshift(req.params.id)
     }
@@ -38,7 +43,6 @@ function create(req, res) {
 };
 
 function deleteWishlist(req, res) {
-  console.log("__________________________");
   Cloth.findById(req.user.id, function (err, cloth) {
     let count =0;
     const myArray = Object.values(cloth.products);
@@ -72,7 +76,7 @@ function deleteWishlist(req, res) {
 
     myArray.splice(count, 1);
     console.log("myArray", myArray);
-console.log("__________________________");
+
     res.redirect("/users")
   })
 }

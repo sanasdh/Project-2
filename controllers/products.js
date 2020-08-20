@@ -33,8 +33,12 @@ async function create(req, res, next) {
 };
 function show(req, res) {
     Product.find({ "_id": req.params.id }, function (err, product) {
-        Cloth.findById(req.user.id, function (err, cloth) {
-            console.log("req.params.id", req.params.id);
+        Cloth.findById(req.user, function (err, cloth) {
+            // console.log("in show product");
+            // console.log("cloth", cloth);
+            // console.log("req.user.id",req.user.id);
+            // console.log("req.user",req.user);
+            // console.log("req.params.id", req.params.id);
             res.render("clothes/show", {
                 user: req.user,
                 product,
