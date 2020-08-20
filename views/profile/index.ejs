@@ -1,4 +1,17 @@
 <%- include("../partials/header") %>
-<h2>Welcom To Your Page!</h2>
+<% console.log("userInfo.products[0]._id", userInfo.products[0]._id) %>
+<% userInfo.products.forEach(function(p){ %>
+<% if(p._id!=userInfo.products[0]._id){ console.log("p._id", p._id) %>
+</br> name: <%= p.name %>
+</br>
+<img class="showProduct" src="<%= p.api_featured_image %>" >
+<div>View on <a class="showProduct" href="<%= p.product_link %>"  target=”_blank” ><span class="showProduct"><%= p.brand %></span></a> Website </div>
+</br>Price: <%= p.price %>   
+<% if (p.currency){ %>
+<%= p.currency %>
+<% } else{%>
+  CAD 
+  <% }} %>
+<% }) %>
 
 <%- include("../partials/footer") %>

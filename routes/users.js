@@ -3,5 +3,6 @@ var router = express.Router();
 var userCtrl = require("../controllers/users")
 
 router.get('/', userCtrl.index)
+router.post("/:id",userCtrl.create)
 
 module.exports = router;

@@ -11,7 +11,7 @@ async function create(req, res, next) {
     const brand = req.query.brand;
     const product = req.query.product;
     const productData = await Product.find({});
-let a=0,c=0;
+    let a = 0, c = 0;
     // const userData = JSON.parse(body);
     // console.log("userdata", userData);
     Cloth.find(modelQuery).sort(sortKey).exec(function (err) {
@@ -32,18 +32,13 @@ let a=0,c=0;
 
 };
 function show(req, res) {
-    let modelQuery = req.query.name ? { name: new RegExp(req.query.name, 'i') } : {};
-    // Default to sorting by name
-    let sortKey = req.query.sort || 'name';
-    Product.find({"_id":req.params.id}, function (err, product) {
-        Cloth.find(modelQuery).sort(sortKey).exec(function (err) {
-            console.log("product", product);
-
+    Product.find({ "_id": req.params.id }, function (err, product) {
+        Cloth.findById(req.user.id, function (err, cloth) {
+            console.log("req.params.id", req.params.id);
             res.render("clothes/show", {
                 user: req.user,
-                name: req.query.name,
-                sortKey,
-                product
+                product,
+                cloth
             })
         })
     })

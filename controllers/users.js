@@ -1,24 +1,47 @@
 let Cloth = require("../models/cloth")
+let Product = require("../models/product");
 
 function index(req, res, next) {
-    console.log(req.query)
-    // Make the query object to use with Student.find based up
-    // the user has submitted the search form or now
-    let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
-    // Default to sorting by name
-    let sortKey = req.query.sort || 'name';
-    Cloth.find(modelQuery)
-    .sort(sortKey).exec(function(err) {
-      if (err) return next(err);
-      // Passing search values, name & sortKey, for use in the EJS
+  Cloth.findById(req.user.id).populate("products").exec(function(err, userInfo){
+  console.log("userInfo", userInfo)
       res.render('profile/index', {
         user: req.user,
-        name: req.query.name,
-        sortKey
-      });
+        userInfo 
     });
-  }
+    });
+}
 
-  module.exports={
-      index: index,
-  }
+  function create(req, res) {
+ 
+    Cloth.findById(req.user.id, function (err, cloth) {
+      if(!(cloth.products.includes(req.params.id))){
+      cloth.products.unshift(req.params.id)
+      }
+      cloth.save(function(err){
+     console.log("cloth", cloth);
+    if (err) return next(err);
+
+    // console.log("theId", theId);    
+    // console.log("req.params.id", req.params._id);
+    // console.log("req.params.id", req.params.id);
+    // console.log("req.params", req.params);        
+    // console.log("Product(req.body)._id",  Product(req.body)._id);    
+    // console.log("req.body", req.body);    
+    // console.log("Product(req.body)", Product(req.body));
+    res.redirect("/users")
+    // res.render('profile/index', {
+    //   user: req.user,
+    //   name: req.query.name,
+    //   sortKey,
+      
+
+    // });
+  
+})
+})
+};
+
+module.exports = {
+  index: index,
+  create,
+}
