@@ -134,5 +134,10 @@
   }
   .search-from{
     margin-bottom: 0;
-
+  }
+  .noResut{
+    width:100%;
+    text-align: center;
+    border-bottom: 2px dashed black;
+    padding-bottom: 10px;;
   }

@@ -1,0 +1,19 @@
+<%- include("../partials/header") %>
+<h1>Thank you for your comment</h1>
+<h2>Contact us</h2>
+<form method="POST" action="">
+  <label>Name:</label>
+  <input name="name" type="text" placeholder="Full Name*" required />
+  <label>Email:</label>
+  <input
+    name="email"
+    type="email"
+    placeholder="example@example.com*"
+    required
+  />
+  <label>Comment:</label>
+  <textarea name="content" required></textarea>
+  <input type="submit" value="Submit" />
+</form>
+
+<%- include("../partials/footer") %>

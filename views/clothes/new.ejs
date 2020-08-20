@@ -1,26 +1,52 @@
 <%- include("../partials/header") %>
+<h1>By Brand & product</h1>
 <div class="grid-container">
   <% productData.forEach(function(b){ %>
-    <% newBrand.forEach(function(nB){ %>
-      <% if(b.brand==nB){ %>
-        <% a++ %>
-        <% newProduct.forEach(function(nP){ %>
-        <% if(b.product_type== nP){ %>
-        <% c++ %>
+  <% newBrand.forEach(function(nB){ %>
+  <% newProduct.forEach(function(nP){ %>
+  <% if(b.brand==nB && b.product_type== nP){ %>
+  <% c++ %>
   <div class="grid-items">
-      <img class="search-img" src="<%= b.api_featured_image %>">
-      <div class="search-from search-from-div">
-      <form action="/products/<%=b._id %>" method="GET" class="search-from">
-        <button type="submit">Detail</button>
-      </form>
-    </div>
+    <img class="search-img" src="<%= b.api_featured_image %>">
+    <form action="/products/<%=b._id %>" method="GET" class="search-from">
+      <button type="submit">Detail</button>
+    </form>
   </div>
-    <% }})}})%>
-  
-  <% }) %>
+
+<% }})})})%>
 </div>
 <% if(c==0){ %>
-<h3>Sorry, <a href="/clothes/search" class="here">search</a> again :( </h3>
+  <h5 class= > no exact result was found</h3>
+  <% } %>
+  <% productData.forEach(function(b){ %>
+    <% newBrand.forEach(function(nB){ %>
+      <% if(b.brand==nB ){ %>
+  <% a++ %>
+    <% }})})%>
+  
+
+<% if(c==0 && a==0){ %>
+<h3>Sorry, we couldn't find anything please <a href="/clothes/search" class="here">search</a> again :( </h3>
 <% } %>
+
+<% if(a==0){ %>
+  <h3>Sorry, <a href="/clothes/search" class="here">search</a> again :( </h3>
+  <% }else if(c==0 && a>0){ %>
+
+    <h1>By Brand</h1>
+    <div class="grid-container">
+      <% productData.forEach(function(b){ %>
+        <% newBrand.forEach(function(nB){ %>
+          <% if(b.brand==nB ){ %>
+      <div class="grid-items">
+        <img class="search-img" src="<%= b.api_featured_image %>">
+          <form action="/products/<%=b._id %>" method="GET" class="search-from">
+            <button type="submit">Detail</button>
+          </form>
+       
+        </div>
+        <% }})})%>
+        </div>
+    <% } %>
 
 <%- include("../partials/footer") %>
