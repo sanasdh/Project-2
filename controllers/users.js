@@ -2,7 +2,11 @@ let Cloth = require("../models/cloth")
 let Product = require("../models/product");
 
 function index(req, res, next) {
-  Cloth.findById(req.user.id).populate("products").exec(function (err, userInfo) {
+  Cloth.find({}).populate("products").exec(function (err, userInfo1) {
+    console.log("userInfo1", userInfo1);
+  })
+  Cloth.find({"_id":req.user.id}).populate("products").exec(function (err, userInfo) {
+    console.log("userInfo", userInfo);
     res.render('profile/index', {
       user: req.user,
       userInfo
@@ -47,6 +51,8 @@ function deleteWishlist(req, res) {
     let count =0;
     const myArray = Object.values(cloth.products);
     Array.isArray(cloth.products)
+    console.log("*********************************************");
+
     console.log("cloth.products", cloth.products);
     console.log("typeof cloth.products", typeof cloth.products);
 
@@ -76,8 +82,12 @@ function deleteWishlist(req, res) {
 
     myArray.splice(count, 1);
     console.log("myArray", myArray);
-
+    console.log("*********************************************");
+    cloth.save(function (err) {
+      //  console.log("cloth", cloth);
+      if (err) return next(err);
     res.redirect("/users")
+    })
   })
 }
 module.exports = {

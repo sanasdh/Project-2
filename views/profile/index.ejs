@@ -1,16 +1,25 @@
 <%- include("../partials/header") %>
-<% userInfo.products.forEach(function(p){ %>
+<h1>Welcome to your whishlist page</h1>
+<% userInfo[0].products.forEach(function(p){ %>
 </br> name: <%= p.name %>
 </br>
 <img class="showProduct" src="<%= p.api_featured_image %>" >
 <div>View on <a class="showProduct" href="<%= p.product_link %>"  target=”_blank” ><span class="showProduct"><%= p.brand %></span></a> Website </div>
-</br>Price: <%= p.price %>   
+</br><% if (p.price){ %>
+Price: <%= p.price %>   
 <% if (p.currency){ %>
-<%= p.currency %>
+  <%= p.currency %>
+  <% } else{%>
+    CAD 
+    <% } %>
 <% } else{%>
-  CAD 
+  - 
   <% } %>
+
 </br>
+<form action="/products/<%=p._id %>" method="GET">
+  <button type="submit">Details</button>
+  </form>
 <form action="/users/<%= p._id %>?_method=DELETE" method="POST">
 <button type="submit">Delete</button>
 </form>
