@@ -27,17 +27,14 @@
   
   body > main {
     grid-area: main;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: #6b6d6e;
     padding: 20px;
-    /* background-image: url("/images/img15.png");
-    background-repeat: no-repeat;
-    background-position: center; */
   }
   
- 
+  body > main h1:first-child {
+    margin-bottom: 20px;
+  }
+  
   nav > a {
     margin: 20px;
     text-decoration: none;
@@ -51,19 +48,6 @@
   }
   
   nav > a.active {
-    color: white;
-  }
-
-  .showProduct{
-    display: inline;
-  }
-  .colorClass{
-    color:white;
-    font-size: 14px;
-  }
-  .here{
-    text-decoration: underline;
-    font-family: 'Pangolin', cursive;
     color: white;
   }
   
@@ -80,22 +64,11 @@
     padding: 10px;
     text-align: center;
   }
-  
-   #add-review-form {
-     display: grid;
-     grid-template-columns: auto auto;
-     grid-gap: 1rem;
-   }
-  
-   #add-review-form input[type="submit"] {
-     width: 8rem;
-     grid-column: 2 / 3;
-     margin-bottom: 2rem;
-   }
-   i{
+
+  i{
     display: inline;
   }
-   .nav-wrapper{
+  .nav-wrapper{
   background-color: #5a5850;
   }
   .brand-logo{
@@ -103,14 +76,6 @@
     font-size: 20px;
     padding-bottom: 0;
     margin-bottom: 0;
-  }
-  .outfit{
-    font-size: 50px;
-    color: white;
-    position: relative;
-    top: 100px;
-    font-family: 'Pangolin', cursive;
-    text-align: center;
   }
   
   .searchIcon{
@@ -121,18 +86,28 @@
   }
 
   * {box-sizing: border-box;}
-  .search-img {
+  img {
     width:200px;
     margin: 5px;
+    vertical-align: middle;
   }
   .grid-container {
     display: grid;
-    gap: 40px;
     grid-template-rows: 3fr;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: repeat(30, 3fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: repeat(15, 3fr);
   }
-  .search-from{
+  .grid-items{
+text-align: center;
+  }
+  form{
+    display: inline-block;
     margin-bottom: 0;
-
+  }
+  button [type="submit"]{
+    margin: 0 auto;
+    margin-bottom: 0;
+  }
+  h1{
+    text-align: center;
   }

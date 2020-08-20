@@ -12,8 +12,6 @@ async function create(req, res, next) {
     const product = req.query.product;
     const productData = await Product.find({});
     let a = 0, c = 0;
-    // const userData = JSON.parse(body);
-    // console.log("userdata", userData);
     Cloth.find(modelQuery).sort(sortKey).exec(function (err) {
         if (err) return next(err);
         console.log("product", product);
@@ -34,11 +32,6 @@ async function create(req, res, next) {
 function show(req, res) {
     Product.find({ "_id": req.params.id }, function (err, product) {
         Cloth.findById(req.user, function (err, cloth) {
-            // console.log("in show product");
-            // console.log("cloth", cloth);
-            // console.log("req.user.id",req.user.id);
-            // console.log("req.user",req.user);
-            // console.log("req.params.id", req.params.id);
             res.render("clothes/show", {
                 user: req.user,
                 product,

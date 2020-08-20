@@ -1,21 +1,26 @@
 <%- include("../partials/header") %>
-<% productData.forEach(function(b){ %>
-  <% newBrand.forEach(function(nB){ %>
-    <% if(b.brand==nB){ %>
-      <% a++ %>
-      <% newProduct.forEach(function(nP){ %>
-      <% if(b.product_type== nP){ %>
+<div class="grid-container">
+  <% productData.forEach(function(b){ %>
+    <% newBrand.forEach(function(nB){ %>
+      <% if(b.brand==nB){ %>
+        <% a++ %>
+        <% newProduct.forEach(function(nP){ %>
+        <% if(b.product_type== nP){ %>
         <% c++ %>
-        <div class="sortingImg">
-          <img src="<%= b.api_featured_image %>">
-          <form action="/products/<%=b._id %>" method="GET">
-            <button type="submit">Detail</button>
-          </form>
-        </div>
-<% }})}})}) %>
-
+  <div class="grid-items">
+      <img class="search-img" src="<%= b.api_featured_image %>">
+      <div class="search-from search-from-div">
+      <form action="/products/<%=b._id %>" method="GET" class="search-from">
+        <button type="submit">Detail</button>
+      </form>
+    </div>
+  </div>
+    <% }})}})%>
+  
+  <% }) %>
+</div>
 <% if(c==0){ %>
-  <h3>Sorry, <a href="/clothes/search" class="here">search</a> again :( </h3>
+<h3>Sorry, <a href="/clothes/search" class="here">search</a> again :( </h3>
 <% } %>
 
 <%- include("../partials/footer") %>
