@@ -1,5 +1,5 @@
 <%- include("../partials/header") %>
-<h1>By Brand & product</h1>
+<h1>By Brand & Product</h1>
 <div class="grid-container">
   <% productData.forEach(function(b){ %>
   <% newBrand.forEach(function(nB){ %>
@@ -15,6 +15,22 @@
 
 <% }})})})%>
 </div>
+
+<h1>Only By Brand</h1>
+<div class="grid-container">
+  <% productData.forEach(function(b){ %>
+    <% newBrand.forEach(function(nB){ %>
+      <% if(b.brand==nB ){ %>
+  <div class="grid-items">
+    <img class="search-img" src="<%= b.api_featured_image %>">
+      <form action="/products/<%=b._id %>" method="GET" class="search-from">
+        <button type="submit">Detail</button>
+      </form>
+   
+    </div>
+    <% }})})%>
+    </div>
+
 <% if(c==0){ %>
   <h5 class= > no exact result was found</h3>
   <% } %>
@@ -33,7 +49,7 @@
   <h3>Sorry, <a href="/clothes/search" class="here">search</a> again :( </h3>
   <% }else if(c==0 && a>0){ %>
 
-    <h1>By Brand</h1>
+    <h1>Only By Brand</h1>
     <div class="grid-container">
       <% productData.forEach(function(b){ %>
         <% newBrand.forEach(function(nB){ %>
