@@ -1,7 +1,5 @@
 <%- include("../partials/header") %>
-<% console.log("userInfo.products[0]._id", userInfo.products[0]._id) %>
 <% userInfo.products.forEach(function(p){ %>
-<% if(p._id!=userInfo.products[0]._id){ console.log("p._id", p._id) %>
 </br> name: <%= p.name %>
 </br>
 <img class="showProduct" src="<%= p.api_featured_image %>" >
@@ -11,7 +9,13 @@
 <%= p.currency %>
 <% } else{%>
   CAD 
-  <% }} %>
+  <% } %>
+</br>
+<form action="/users/<%= p._id %>?_method=DELETE" method="POST">
+<button type="submit">Delete</button>
+</form>
+
 <% }) %>
+
 
 <%- include("../partials/footer") %>
