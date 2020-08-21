@@ -13,10 +13,10 @@ the web application is hosted on Heroku.
 You can find the web app deployed at Heroku [HERE!](http://projectgasei2.herokuapp.com/).
 
 # Next Steps
-## Notes on the Development
- 1. Project Requirements
- 2. Project Proposal - Fill-in the Brain
- 3. User Stories
- 4. Wireframes
- 5. Entity Relationship Diagrams
+# Notes on the Development
+## 1. Project Requirements
+## 2. Project Proposal - Fill-in the Brain
+## 3. User Stories
+## 4. Wireframes
+## 5. Entity Relationship Diagrams
 ![Alt Entity Relationship Diagrams](https://github.com/sanasdh/Project-2/blob/master/public/images/Databse%20ER.JPG?raw=true)
