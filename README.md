@@ -1,5 +1,5 @@
 # Project 2 - Summary
-
+![Alt First Page](https://github.com/sanasdh/Project-2/blob/master/public/images/firstpage.JPG?raw=true)
 FindYourMakeup is a web application used to help the user find his/her product easier while having the chance to look at similar products as well. Then the user can add the product to her wishlist and/or view it on the brand's website. This application was created as my second project of the General Assembly's Software Engineering Immersive (SEI) Program.
 # Technologies Used
 This web application is built based on:
