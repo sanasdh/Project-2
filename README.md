@@ -34,5 +34,11 @@ To provide insight of how the application was developed, the following sections 
 ## 2. Project Proposal
 ## 3. User Stories
 ## 4. Wireframes
+![Alt](https://github.com/sanasdh/Project-2/blob/master/public/images/index.JPG?raw=true)
+![Alt](https://github.com/sanasdh/Project-2/blob/master/public/images/search.JPG?raw=true)
+![Alt](https://github.com/sanasdh/Project-2/blob/master/public/images/result.JPG?raw=true)
+![Alt](https://github.com/sanasdh/Project-2/blob/master/public/images/show.JPG?raw=true)
+![Alt](https://github.com/sanasdh/Project-2/blob/master/public/images/profile.JPG?raw=true)
+These wireframes were the idea behind making the web application. After implementing most of the features, some features were added, such as "contact us" and "profile" in the nav bar.
 ## 5. Entity Relationship Diagrams
 ![Alt Entity Relationship Diagrams](https://github.com/sanasdh/Project-2/blob/master/public/images/Databse%20ER.JPG?raw=true)
