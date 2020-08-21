@@ -11,11 +11,14 @@
     <form action="/products/<%=b._id %>" method="GET" class="search-from">
       <button type="submit">Detail</button>
     </form>
+    
   </div>
 
 <% }})})})%>
 </div>
+<% if(c==0 ){ %>
 <h5 class= > No exact result was found</h3>
+  <% } %>
 <h1>Only By Brand</h1>
 <div class="grid-container">
   <% productData.forEach(function(b){ %>

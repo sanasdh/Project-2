@@ -1,27 +1,33 @@
 <%- include("../partials/header") %>
 <% product.forEach(function(p){ %>
-name: <%= p.name %>
-</br>
+  <div class= "showClass">
+<h2> Name: <%= p.name %> </h2>
+
 <img class="showProduct" src="<%= p.api_featured_image %>" >
+Brand: <%= p.brand %>
 <div>View on <a class="showProduct" href="<%= p.product_link %>"  target=”_blank” ><span class="showProduct"><%= p.brand %> Website </span></a></div>
-</br>Price: <%= p.price %>   
+<% if (p.price || p.price==0){ %>
+Price: - 
+<% } else{%>
+<%= p.price %>   
 <% if (p.currency){ %>
 <%= p.currency %>
 <% } else{%>
-  CAD <% } %>
-</br>Description: <%= p.description %>
+  CAD <% }} %>
+
+</br><div class="descriptionClass">Description: <%- p.description %></div>
 <% if (user) { %>
   <% if(cloth.products.includes(p._id)){ %>
   <form action="/users" method="GET">
-    <button type="submit">WishListed!</button>
+    <button type="submit"><i class="material-icons left">favorite</i>WishListed!</button>
     </form>
   <% } else { %>
     <form action="/users/<%= p._id %>" method="POST">
-    <button type="submit">Add to WishList</button>
+    <button type="submit"><i class="material-icons left">favorite_border</i>Add to WishList</button>
 </form>
 <% } %>
-
-  <br><br><h2>Reviews</h2>
+</div>
+  <br><br><h3>Reviews</h3>
 <form id="add-review-form" method="POST" action="/products/<%= p._id %>/reviews">
   <label>Review:</label>
   <textarea name="content"></textarea>

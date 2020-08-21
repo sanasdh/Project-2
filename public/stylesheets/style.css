@@ -152,3 +152,19 @@ option:hover {
 label {
   font-size: 16px;
 }
+.descriptionClass {
+  text-align: left;
+  margin-left: 5px;
+}
+.descriptionClass strong {
+  text-decoration: double;
+}
+.showClass img {
+  max-width: 250px;
+  float: left;
+  margin: 15px;
+}
+
+.showClass > h2 {
+  text-align: center;
+}
