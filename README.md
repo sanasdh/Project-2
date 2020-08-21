@@ -33,6 +33,11 @@ To provide insight of how the application was developed, the following sections 
 ## 1. Project Requirements
 ## 2. Project Proposal
 ## 3. User Stories
+A Treollo Board was used to manage the user stories. Below are the results of the initial brainstorming and categorization. Icebox items are ordered in terms of product improvement:
+- AAU, I want to log in to my own profile
+- AAU, I want to search for new clothes and add them to my page
+- AAU, I want to see the first page
+- AAU I want to delete my wishlist items
 ## 4. Wireframes
 ![Alt](https://github.com/sanasdh/Project-2/blob/master/public/images/index.JPG?raw=true)
 ![Alt](https://github.com/sanasdh/Project-2/blob/master/public/images/search.JPG?raw=true)
