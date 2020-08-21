@@ -7,7 +7,6 @@
 var app = require("../server");
 // var debug = require('debug')('project2:server');
 var debug = require("debug")("project2:server");
-
 var http = require("http");
 
 /**
@@ -22,9 +21,6 @@ app.set("port", port);
  */
 
 var server = http.createServer(app);
-
-var io = require("../io");
-io.attach(server);
 
 /**
  * Listen on provided port, on all network interfaces.
