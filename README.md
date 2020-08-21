@@ -1,5 +1,4 @@
-# Project-2
-# Summary
+# Project 2 - Summary
 
 FindYourMakeup is a web application used to help the user find his/her product easier while having the chance to look at similar products as well. Then the user can add the product to her wishlist and/or view it on the brand's website. This application was created as my second project of the General Assembly's Software Engineering Immersive (SEI) Program.
 # Technologies Used
@@ -16,7 +15,7 @@ You can find the web app deployed at Heroku [HERE!](http://projectgasei2.herokua
 1. Improve the user experience:
   1. Add socket.io for live chat, and better customer service
   2. Add username in the reviews
-  3. Add the wichlist button in the "show.ejs", so the user don't need to go to detal page
+  3. Add the wichlist button in the "show.ejs", so the user don't need to go to detail page
 2. Improve the CSS/ Design aspect:
   1. Change the font
   2. Make the website responsive
